@@ -1,0 +1,467 @@
+<!DOCTYPE HTML>
+<html lang="en" class=""><head>
+
+  <meta charset="UTF-8">
+  <title>Happy Birthday</title>
+
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" type="image/x-icon" href="../../img/icon.png">
+  <link rel="mask-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  <link rel="canonical" href="https://codepen.io/nailaahmad/pen/MyZXVE">
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+
+
+
+
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeConsoleRunner-6bce046e7128ddf9391ccf7acbecbf7ce0cbd7b6defbeb2e217a867f51485d25.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+  <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRuntimeErrors-4f205f2c14e769b448bcf477de2938c681660d5038bc464e3700256713ebe261.js"></script>
+  <style >
+
+    html {
+    scroll-behavior: smooth;
+    }
+    #Frames, .Frame {
+      list-style: none;
+      list-style-type: none;
+      margin: 0px;
+      padding-left: 30%;
+      text-align: center;
+    }
+    #Frames {
+      margin: 5% 0;
+      width: 70%;
+    }
+    .Frame {
+      display: inline-block;
+      padding: 30px;
+      border-width: 20px;
+      border-style: solid;
+      border-color: #2F2D2D #434040 #4F4C4C #434040;
+      background: #f5f5f5;
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E5E4DF), to(#CDCDC6));
+      background-image: -webkit-linear-gradient(#E5E4DF, #CDCDC6);
+      background-image: -moz-linear-gradient(#E5E4DF, #CDCDC6);
+      background-image: -o-linear-gradient(#E5E4DF, #CDCDC6);
+      background-image: linear-gradient(#E5E4DF, #CDCDC6);
+      box-shadow: inset 0 2px 5px rgba(0,0,0,.6),0 5px 2px rgba(0,0,0,.1), 0 10px 20px rgba(0,0,0,.8);
+      position: relative;
+      overflow: hidden;
+    }
+    .Frame::before {
+      content: "";
+      position: absolute;
+      top: -175px;
+      right: -20%;
+      width: 200px;
+      height: 400px;
+      transform: rotateZ(-40deg);
+      -webkit-transform: rotateZ(-40deg);
+      -moz-transform: rotateZ(-40deg);
+      -o-transform: rotateZ(-40deg);
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255,255,255,.4)), to(rgba(255,255,255,0)));
+      background-image: -webkit-linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,0));
+      background-image: -moz-linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,0));
+      background-image: -o-linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,0));
+      background-image: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,0));
+    }
+    .Frame img {
+      border-width: 2px;
+      border-style: solid;
+      border-color: #BBBAB4 #C7C7BF #E5E4DF #C7C7BF;
+      box-shadow:  0 -1px 1px rgba(0,0,0,.1), 0 1px 1px 1px rgba(255,255,255,.7);
+    }
+    .wrapper {
+      min-height: 100vh;
+      font-family: "Roboto Slab", serif;
+      font-weight: 300;
+      color: #fff;
+      position: relative;
+
+    }
+    p{
+      font-size:20px;
+      text-align:right;
+    }
+    section {
+      min-height: 120vh;
+      font-size: 40px;
+      font-weight: 100;
+      background-color: #22A7F0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 40%;
+      padding-right:5%;
+      text-align: center;
+    }
+
+    @media only screen and (max-width: 766px) {
+      section {
+        min-height: 120vh;
+        font-size: 40px;
+        font-weight: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5%;
+        padding-right:5%;
+        text-align: center;
+      }
+
+      p{
+        font-size:20px;
+        text-align:center;
+      }
+    }
+
+    section:nth-child(1) {
+      background: white;
+    }
+    section:nth-child(2) {
+      background: #F64747;
+    }
+    section:nth-child(3) {
+      background: #22A7F0;
+    }
+    section:nth-child(4) {
+      background: #F9690E;
+    }
+    section:nth-child(5) {
+      background: #9B59B6;
+    }
+    section:nth-child(6) {
+      background: #03C9A9;
+    }
+    section:nth-child(7) {
+      background: #ffcc00;
+    }
+
+    .nav__wrapper {
+      position: fixed;
+      height: 100%;
+      padding: 30px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-end;
+    }
+    .nav {
+      margin: 0 0 100px 30px;
+    }
+    .nav__counter {
+      font-size: 24px;
+      transition: all 0.15s ease-out;
+    }
+    .nav__title {
+      font-size: 32px;
+      font-weight: 300;
+      margin: 0 0 0.25em;
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: height 0.3s ease-out, opacity 0.2s ease-out;
+    }
+    .nav__body {
+      font-weight: 100;
+      font-size: 18px;
+      font-size: 18px;
+      width: 300px;
+      height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: height 0.3s ease-out, opacity 0.2s ease-out;
+    }
+    .nav li {
+      position: relative;
+      transition: all 0.3s ease-out;
+      margin-bottom: 1em;
+    }
+    .nav li:after {
+      content: "";
+      display: block;
+      border-left: 2px solid white;
+      border-top: 2px solid white;
+      height: 250px;
+      width: 20px;
+      position: absolute;
+      left: -30px;
+      top: 15px;
+    }
+    .nav li a {
+      display: block;
+      padding: 0;
+      color: #fff;
+      transition: all 0.15s ease-out;
+    }
+    .nav li a:hover {
+      background-color: transparent;
+      padding-left: 1em;
+    }
+    .nav li a:focus {
+      background-color: transparent;
+    }
+    .nav li.active {
+      pointer-events: none;
+      padding-left: 1em;
+    }
+    .nav li.active:after {
+      width: 35px;
+      height: 400px;
+      top: 35px;
+    }
+    .nav li.active .nav__counter {
+      font-size: 48px;
+    }
+    .nav li.active .nav__title {
+      height: 40px;
+      opacity: 1;
+      overflow: visible;
+    }
+    .nav li.active .nav__body {
+      height: 100px;
+      opacity: 1;
+      overflow: visible;
+    }
+
+    .wrapperPol {
+      position:relative;
+      width: 100%;
+      padding: 0 2rem;
+      text-align: center;
+      color:black;
+    }
+    .polaroid {
+      background: #fff;
+      padding: 1rem;
+      box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+
+    }
+    .polaroid > img{
+      max-width: 100%;
+      height: auto;
+    }
+    .caption {
+      font-size: 1.8rem;
+      text-align: center;
+      line-height: 2em;
+    }
+    .item {
+      width: 30%;
+      display: inline-block;
+      margin-top: 2rem;
+      filter: grayscale(100%);
+    }
+    .item .polaroid:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+1) {
+      transform: scale(0.8, 0.8) rotate(5deg);
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+1) .polaroid:before {
+      transform: rotate(6deg);
+      height: 20%;
+      width: 47%;
+      bottom: 30px;
+      right: 12px;
+      box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+    }
+    .item:nth-of-type(4n+2) {
+      transform: scale(0.8, 0.8) rotate(-5deg);
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+2) .polaroid:before {
+      transform: rotate(-6deg);
+      height: 20%;
+      width: 47%;
+      bottom: 30px;
+      left: 12px;
+      box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+    }
+    .item:nth-of-type(4n+4) {
+      transform: scale(0.8, 0.8) rotate(3deg);
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+4) .polaroid:before {
+      transform: rotate(4deg);
+      height: 20%;
+      width: 47%;
+      bottom: 30px;
+      right: 12px;
+      box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+    }
+    .item:nth-of-type(4n+3) {
+      transform: scale(0.8, 0.8) rotate(-3deg);
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+3) .polaroid:before {
+      transform: rotate(-4deg);
+      height: 20%;
+      width: 47%;
+      bottom: 30px;
+      left: 12px;
+      box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+    }
+    .item:hover {
+      filter: none;
+      transform: scale(1, 1) rotate(0deg) !important;
+      transition: all 0.35s;
+    }
+    .item:hover .polaroid:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      transform: rotate(0deg);
+      height: 90%;
+      width: 90%;
+      bottom: 0%;
+      right: 5%;
+      box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
+      transition: all 0.35s;
+    }
+
+  </style>
+  </head>
+
+
+  <body data-spy="scroll" data-target="#navbar-example">
+
+
+
+    <div class="wrapper">
+
+      <nav class="nav__wrapper hidden-xs" id="navbar-example">
+        <ul class="nav">
+
+          <li role="presentation" class="">
+            <a href="#section1">
+              <span class="nav__counter">Happy Birthday</span>
+              <h3 class="nav__title">Catharina Mellani</h3>
+              <p class="nav__body">Please scroll down or click the month to continue :)</p>
+            </a>
+          </li>
+
+          <li role="presentation" class="">
+            <a href="#section2">
+              <span class="nav__counter">March</span>
+              <h3 class="nav__title">The Preparation Month</h3>
+            </a>
+          </li>
+
+          <li role="presentation" class="">
+            <a href="#section3">
+              <span class="nav__counter">April</span>
+              <h3 class="nav__title">Officially BF & GF </h3>
+
+            </a>
+          </li>
+
+          <li role="presentation" class="">
+            <a href="#section4">
+              <span class="nav__counter">May</span>
+              <h3 class="nav__title">The time is not right</h3>
+
+            </a>
+          </li>
+          
+          <li role="presentation" class="">
+            <a href="http://catharina-m.infinityfreeapp.com/2023/Anniversary/" >
+              <span class="nav__counter">Next event</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="section section1" id="section1">
+        <div>
+          Hello Catha
+          <br>
+          <div style="font-size:20px;">This is a gift for you, let's create another memories together.</div>
+          <br>
+          <ul id="Frames">
+            <li class="Frame">
+              <img src="../../img/boncafe-april-2023.jpeg"  loading="lazy" style="width:100%" alt="Boncafe,Surabaya - April,2023" />
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section2" id="section2">
+        <div>
+          March 2023
+          <br>
+          <p >Elo, sudah ngga lama lagi kita bakalan ketemu. Sedikit deg"an soalnya ngga tau nanti bakalan awkward apa ngga. Tapi setidaknya akan menghilangkan rasa penasaran. Aku sudah mulai resign untuk pulang ke Surabaya supaya bisa siap" pergi ke New Zealand dan kamu sudah siap untuk pulang ke Indonesia. Masih ada beberapa urusan yang harus diselesaikan sebelum aku bisa ke New Zealand dan disaat aku butuh, kamu bantuin aku walaupun kamu sibuk. Akhirnya setelah sekitar 5 bulan pacaran, bisa di officiallin. Can't wait to meet you in person.</p>
+        </div>
+      </section>
+
+      <section class="section section3" id="section3">
+      <div style="display:relative;">
+        <div>
+          April 2023
+          <br>
+          <p>Bulan dimana kita bertemu pertama kali. Waktu pertama kali ketemu memang sedikit awkward ditambah lagi harus ketemu sama orang tuamu, tapi setelah mulai ngobrol didalam mobil, suasana sudah mulai mencair. Seru sekali ada temen pergi dan membuat memories sama kamu. Bulan ini kita pergi ke hampir semua mall di Surabaya dan ke BNS. Di bulan ini juga kamu ketemu temen baru, oyen. Rasanya kamu lebih sayang sama oyen daripada sama aku. Tapi di bulan ini juga kita harus melanjutkan LDR kita selama 1,5 bulan dan yang lebih sakit hati, jaketnya ketinggalan ditangisin, akunya ngga....
+          </p>
+        </div>
+        <div class ="wrapperPol">
+          <div class="item">
+            <div class="polaroid">
+              <img src="../../img/birthday-2023-pic2.jpeg"  loading="lazy" style="width:100%" alt="Boncafe,Surabaya - April,2023" />
+              <div class="caption">Boncafe</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="polaroid">
+              <img src="../../img/birthday-2023-pic1.jpeg"  loading="lazy" style="width:100%" alt="BNS,Surabaya - April,2023" />
+              <div class="caption">BNS</div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="polaroid">
+              <img src="../../img/birthday-2023-pic3.jpeg"  loading="lazy" style="width:100%" alt="Home,Hamliton - April,2023" />
+              <div class="caption">I'm cute</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <section class="section section4" id="section4">
+        <div>
+          May 2023
+          <br>
+          <p>Kamu sibuk, saya pengangguran. aku setiap hari kerjaannya cuman nungguin kamu pulang kerja baru kita bisa telponan. Kamunya sibuk pindahan dan banyak kerjaan dikantor sampai oyen tenggelam di bawah tumpukan barang. Aku kasian tapi ngga bisa bantu kamu, apalagi waktu kamu pindahan tempat tinggal soalnya kamu sampai tepar besoknya. Tapi disini juga membuktikan kalau kamu tidak sejago aku nyetirnya sampai nyerempet pager. Ya sudahlah ya tinggal beberapa hari lagi kita ketemu lagi. Semoga kita ngga usah LDR lagi setelah di New Zealand. Things you do that I like: kalau sedih kamu buat bibir bawahmu diputar kebawah, kalau telp diawalin oleh Elo dengan nada anak kecil, kalau lagi jengkel pasti teriak ihhhhhhh terus tampilin muka sedih. Ini ya sudah kubuatin list. See you next time.
+          </p>
+        </div>
+      </section>
+      
+    </div>
+
+
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdpn.io/cpe/boomboom/pen.js?key=pen.js-2398d4b0-0312-2461-cd2d-77c57e6f363a" crossorigin=""></script>
+    <script> 
+      function nextFunction() {
+        window.location.replace("http://catharina-m.infinityfreeapp.com/2023/Anniversary/")
+      }
+    </script>
+    <audio controls autoplay loop>
+      <source src="../../audio/hbd-2023.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+
+  </body></html>

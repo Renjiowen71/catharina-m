@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    html{
+      scroll-behavior: smooth;
+    }
+    body{
+      background: url("../../img/valentine-2023.jpeg");
+      background-size: auto;
+      
+    }
+    ::selection{
+      color: #fff;
+      background: #ff7979;
+    }
+    .wrapper{
+      max-width: 1080px;
+      margin: 50px auto;
+      padding: 0 20px;
+      position: relative;
+    }
+    .wrapper .center-line{
+      position: absolute;
+      height: 100%;
+      width: 4px;
+      background: #fff;
+      left: 50%;
+      top: 20px;
+      transform: translateX(-50%);
+      opacity:0.5;
+      box-shadow: 2px 2px 3px white
+    }
+    .wrapper .row{
+      display: flex;
+    }
+    .wrapper .row-1{
+      justify-content: flex-start;
+    }
+    .wrapper .row-2{
+      justify-content: flex-end;
+    }
+    .wrapper .row section{
+      background: #fff;
+      border-radius: 5px;
+      width: calc(50% - 40px);
+      padding: 20px;
+      position: relative;
+    }
+    .wrapper .row section::before{
+      position: absolute;
+      content: "";
+      height: 15px;
+      width: 15px;
+      background: #fff;
+      top: 28px;
+      z-index: -1;
+      transform: rotate(45deg);
+    }
+    .row-1 section::before{
+      right: -7px;
+    }
+    .row-2 section::before{
+      left: -7px;
+    }
+    .row section .icon,
+    .center-line .scroll-icon{
+      position: absolute;
+      background: #f2f2f2;
+      height: 40px;
+      width: 40px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ff7979;
+      font-size: 17px;
+      box-shadow: 0 0 0 4px pink, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
+    }
+    .center-line .scroll-icon{
+      bottom: 0px;
+      left: 50%;
+      font-size: 25px;
+      transform: translateX(-50%);
+    }
+    .row-1 section .icon{
+      top: 15px;
+      right: -60px;
+    }
+    .row-2 section .icon{
+      top: 15px;
+      left: -60px;
+    }
+    .row section .details,
+    .row section .bottom{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .title{
+      font-size: 22px;
+      font-weight: 600;
+      font-family: 'Pacifico', cursive;
+      font-style: italic;
+    }
+    .row section p{
+      margin: 10px 0 17px 0;
+    }
+    .row section .bottom a{
+      text-decoration: none;
+      background: #ff7979;
+      color: #fff;
+      padding: 7px 15px;
+      border-radius: 5px;
+      /* font-size: 17px; */
+      font-weight: 400;
+      transition: all 0.3s ease;
+    }
+    .row section .bottom a:hover{
+      transform: scale(0.97);
+    }
+    @media(max-width: 790px){
+      .wrapper .center-line{
+        left: 40px;
+      }
+      .wrapper .row{
+        margin: 30px 0 3px 60px;
+      }
+      .wrapper .row section{
+        width: 100%;
+      }
+      .row-1 section::before{
+        left: -7px;
+      }
+      .row-1 section .icon{
+        left: -60px;
+      }
+    }
+    @media(max-width: 440px){
+      .wrapper .center-line,
+      .row section::before,
+      .row section .icon{
+        display: none;
+      }
+      .wrapper .row{
+        margin: 10px 0;
+      }
+    }
+    section:hover {
+      box-shadow:3px 3px 10px red;
+      opacity:0.9;
+    }
+
+    section {
+      box-shadow:3px 3px 10px white;
+      opacity:0.7;
+    }
+
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s;
+      border-radius: 25px;
+    }
+
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+    }
+
+    @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+    }
+
+    /* The Close Button */
+    .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .modal-header {
+      font-family: 'Pacifico', cursive;
+      font-style: italic;
+      padding: 25px 16px;
+      background-color: #FF86D3;
+      color: white;
+      border-radius: 15px;
+    }
+
+    .modal-body {padding: 2px 16px;}
+
+    .modal-footer {
+      padding: 25px 16px;
+      background-color: #FF86D3;
+      color: white;
+      border-radius: 15px;
+    }
+
+    .hearts {
+    position: absolute;
+    z-index:2;
+    }
+
+    .heartOne {
+    position: absolute;
+    left:700px;
+    top:270px;
+    animation: up 4s linear forwards 1s;
+    }
+
+    .heartTwo {
+    position: absolute;
+    left:600px;
+    top:280px;
+    animation: up 5s linear forwards 1.8s;
+    }
+
+    .right-side:before, .right-side:after {
+    position: absolute;
+    content:"";
+    transform-origin: left;
+    animation: move 1s ease infinite;
+    }
+
+    .right-side:before {
+    border-radius:50% 50% 50% 0;
+    width:21px;
+    height:20px;
+    background-color: #c9184a;
+    left:-0.26px;
+    }
+
+    .right-side:after {
+    height:0;
+    width:0;
+    border-bottom:10px solid transparent;
+    border-left: 15px solid #c9184a;
+    top:19px;
+    left:-0.26px;
+    }
+
+    @keyframes move {
+    0%, 100% {transform: rotateY(0);}
+    50% {transform: rotateY(-45deg);}
+    }
+
+    .left-side:before, .left-side:after {
+    position: absolute;
+    content:"";
+    transform-origin: right;
+    animation: move 1s ease infinite;
+    }
+
+    .left-side:before {
+    border-radius:50% 50% 0 50%;
+    width:20px;
+    height:20px;
+    left:-20.7px;
+    background-color: #ff4d6d;
+    }
+
+    .left-side:after {
+    height:0;
+    width:0;
+    left:-15px;
+    border-bottom:10px solid transparent;
+    border-right: 15px solid #ff4d6d;
+    top:19px;
+    }
+
+    @keyframes up {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-250px);}
+    }
+
+  </style>
+
+  </head>
+
+  <body >
+
+
+    <div class="wrapper">
+      <div class="center-line">
+        <a href="#" class="scroll-icon"><i class="fas fa-caret-up"></i></a>
+      </div>
+      <div class="row row-1">
+        <section id="sepBtn" onclick="sepFunction()">
+          <i class="icon fas fa-home"></i>
+          <div class="details">
+            <span class="title">How I Met You</span>
+            <span>September 2022</span>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class="bottom">
+            Hi......................
+          </div>
+        </section>
+      </div>
+
+      <div class="row row-2">
+        <section id="octBtn" onclick="octFunction()">
+          <i class="icon fas fa-home"></i>
+          <div class="details">
+            <span class="title">The First Problem</span>
+            <span>October 2022</span>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class="bottom">
+            Hehehehehehehe kadang kurang peka
+          </div>
+        </section>
+      </div>
+
+      <div class="row row-1">
+        <section id="novBtn" onclick="novFunction()">
+          <i class="icon fas fa-home"></i>
+          <div class="details">
+            <span class="title">Plan To Go Together</span>
+            <span style="width:51%;text-align:right">November 2022</span>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class="bottom">
+            Aku kena mental supaya harus kesana :)
+          </div>
+        </section>
+      </div>
+
+      <div class="row row-2">
+        <section id="decBtn" onclick="decFunction()">
+          <i class="icon fas fa-home"></i>
+          <div class="details">
+            <span class="title">Lonely Month</span>
+            <span>December 2022</span>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class="bottom">
+            Pada sibuk semua
+          </div>
+        </section>
+      </div>
+
+
+      <div class="row row-1">
+        <section onclick="janFunction()">
+          <i class="icon fas fa-home"></i>
+          <div class="details">
+            <span class="title">The Reward</span>
+            <span>January 2022</span>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class="bottom">
+            My reward to be precise
+          </div>
+        </section>
+      </div>
+
+      <div class="row row-2">
+        <section onclick="febFunction()">
+          <i class="icon fas fa-home"></i>
+          <div class="details">
+            <span class="title">First Valentine</span>
+            <span>February 2022</span>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class="bottom">
+            Adventure ahead
+          </div>
+        </section>
+      </div>
+
+      <div class="row row-1">
+        <section onclick="nextFunction()">
+          <i class="icon fas fa-home"></i>
+          <div class="details">
+            <span class="title">Next Event</span>
+          </div>
+          <br>
+          <hr>
+          <br>
+          <div class="bottom">
+            To da looo
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="sepModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+          
+        <div class="heartOne">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="heartTwo">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>September</h2>
+        </div>
+        <div class="modal-body">
+          <p>Sebetulnya pertama kali ketemu itu agustus wkwkkwkwwkkw. Pertama kali ketemu, kita berdua seagai pacar orang lain, walaupun bisa dibilang aku bukan lagi pacaran si. Tapi waktu ngomong berdua, kita memang nyambung dan terkadang kita sama" butuh relationship advice. Jadi bisa dibilang, kita dipertemukan oleh mantan.</p>
+          <br>
+          <p>Yang pertama kali di pikiranku itu kamu independent dan sedikit anoying soalnya ngajak main terusss. Anehnya kadang kamu ngga mau main sama si dia dan ngajak aku main jadi dikira aku pelakor. Tapi we spent time together sampai dititik kita nonton bareng dan telponan berjam jam and I enjoy it a lot jadi ngga bisa nyalahin manatan kalau di curigain wkkwkww.</p>
+        </div>
+        <div class="modal-footer">
+          <span class="title">How I Met You</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="octModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+          
+        <div class="heartOne">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="heartTwo">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>October</h2>
+        </div>
+        <div class="modal-body">
+            <p>Sorry kadang aku kurang peka dan masih terlalu tajam mulutnya. Sorry kadang aku juga ngacangin kamu. Tapi aku bisa terbuka seperti ini karena aku sudah nyaman sama kamu. Jadi maafin aku ya kalau aku memang ngga bisa jadi yang terbaik dan yang teromantis, tapi aku bakalan berusaha yang terbaik buat kamu supaya hubungan kita tidak terlalu sulit.</p><br>
+            <p>Aku masih ingat masalah besar pertama kita waktu aku ulang tahun, aku ngga mengira kalau kamu mau surprise-sin aku. Soalnya dipiranku aku dan kamu masih teman biasa heehehehe. Tapi karena pertengkaran" kecil ini pula kita bisa saling mengenal satu sama lain lebih dalam. Kalau disuruh ulang kesalahan aku ngga mau, tapi kalau diberi kesematan untuk memutar balik waktu, bakalan tetap ku lakukan lagi heheheheheheheh.
+        </div>
+        <div class="modal-footer">
+          <span class="title">The First Problem</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="novModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+          
+        <div class="heartOne">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="heartTwo">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>November</h2>
+        </div>
+        <div class="modal-body">
+            <p>Bulan ini adalah salah satu pilihan terbesar yang pernah aku buat. Aku mulai untuk belajar, mencari kesempatan untuk bisa ke New Zealand untuk sekolah lagi. Semua pilihanku ngga akan terlaksana kalau aku ngga ketemu sama kamu. Kita juga mulai mengada" untuk masa depan kita kalau aku sekolah disana. Tempat" yang bakalan dikunjungi kalau kita bisa pergi bareng.
+            </p><br>
+            <p>
+                Waktu ini juga kita mulai berkomitmen dengan satu dengan yang lain, meskipun belum official sih wkkwkwkw. Tapi walaupun belum, rasa pacarannya sudah mulai kerasa. Can't wait to be official
+                </p>
+            
+        </div>
+        <div class="modal-footer">
+          <span class="title">Plan to go together</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="decModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+          
+        <div class="heartOne">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="heartTwo">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>December</h2>
+        </div>
+        <div class="modal-body">
+          <p>Disini kita sama" sibuk. Aku sibuk dengan les dan kerjaanku yang mulai numpuk. Projekku mulai banyak dan kadang kita berdua hilang kalau lagi kerja. Tapi setiap malam masih bisa telp. Masih main mole kadang sama juan dan jasmine. Kalau ngga salah bulan ini juga aku pergi sama jasmine dan temen"nya wkwkwkkw.</p>
+          <br>
+          <p>Kamu juga sibuk. Kamu harus pergi ke Rotorua, Auckland, dan pergi ke temenmu. Jadinya lebih jarang telp dan cerita" waktu malam. Tapi lucu juga liat kamuya sudah tau capek tapi masih aja dipaksa buat temen ckckckck. GITU NGOMONGNYA BUKAN PEOPLE PLEASER.</p>
+        </div>
+        <div class="modal-footer">
+          <span class="title">Lonely Month</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="janModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+          
+        <div class="heartOne">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="heartTwo">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>January</h2>
+        </div>
+        <div class="modal-body">
+            <p>Akhirnyaaaaa keluar juga tuh nilai IELTS. Sudah ngga sabaran deg"an terus tiap bulan nungguin itu nilai. Kalau sudah keluar gini pasti pergi ke New Zealand sama kamu. Selain itu kita juga bisa mulai bahas hal" yang lebih serius ketika aku sudah sampai sana. Ya rasa lega sekali nih, kalau gagal bisa hilang uangku dnegna siasia buat les dan testtttt</p><br>
+            <p>
+                Bulan ini aku pulang ke rumah buat dapet angpao. LUmayan lah gaji tahunan dari orang tua buat bisa jajan". Kasiannya kamu ngga bisa pulang dan dapet angpao, cuman bisa ngiler ngeliatin angpaoku kan kamu wkwkkwkwkwkwkw. Mangkanya lain kali pulang :)
+            </p>
+        </div>
+        <div class="modal-footer">
+          <span class="title">The Reward</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="febModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+          
+        <div class="heartOne">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="heartTwo">
+        <div class="left-side"></div>
+        <div class="right-side"></div>
+        </div>
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>February</h2>
+        </div>
+        <div class="modal-body">
+          <p>Hiii..... sudah ngga kerasa kita beberapa bulan lagi ketemu. Sejak katemu kamu, rasanya semuanya lebih ringan, punya temen curhatn dan telp. Sudah 3 bulan kita pacaran tapi belum ketemu secara langsung..... Kadang aku merasa kesepian, jadinya aku main sendiri... Rasanya sedikit aneh sih, tapi gpp demi masa depan juga. Kepingin tau rasanya pacaran offline gimana, sudah mulai lupa wkwkkwkww.</p>
+          <br>
+          <p>There are 2 endings in our story, and I want the happy ending because I don't think I could stand the bad one, Love you, can't wait to meet you.</p>
+        </div>
+        <div class="modal-footer">
+          <span class="title">First Valentine</span>
+        </div>
+      </div>
+    </div>
+    
+    <audio controls autoplay loop>
+        <source src="../../audio/valentine-2023-perfect.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+    <script>
+
+        
+    const heartOnes = document.querySelectorAll('.heartOne');
+    const heartTwos = document.querySelectorAll('.heartTwo');
+      var sepModal = document.getElementById("sepModal");
+      var octModal = document.getElementById("octModal");
+      var novModal = document.getElementById("novModal");
+      var decModal = document.getElementById("decModal");
+      var janModal = document.getElementById("janModal");
+      var febModal = document.getElementById("febModal");
+
+      var sepSpan = document.getElementsByClassName("close")[0];
+      var octSpan = document.getElementsByClassName("close")[1];
+      var novSpan = document.getElementsByClassName("close")[2];
+      var decSpan = document.getElementsByClassName("close")[3];
+      var janSpan = document.getElementsByClassName("close")[4];
+      var febSpan = document.getElementsByClassName("close")[5];
+
+      function changeHearts(){
+        heartOnes.forEach(element => {
+            var randomNum = 500+(Math.random()*300);
+            var randomNumStr = randomNum+"px";
+            element.style.left = randomNumStr;
+        });
+        heartTwos.forEach(element => {
+            var randomNum = 500+(Math.random()*300);
+            var randomNumStr = randomNum+"px";
+            element.style.left = randomNumStr;
+        });
+      }
+      function sepFunction() {
+        changeHearts()
+        sepModal.style.display = "block";
+      }
+
+      function octFunction() {
+        changeHearts()
+        octModal.style.display = "block";
+      }
+
+      function novFunction() {
+        changeHearts()
+        novModal.style.display = "block";
+      }
+
+      function decFunction() {
+        changeHearts()
+        decModal.style.display = "block";
+      }
+
+      function janFunction() {
+        changeHearts()
+        janModal.style.display = "block";
+      }
+
+      function febFunction() {
+        changeHearts()
+        febModal.style.display = "block";
+      }
+
+      sepSpan.onclick = function() {
+        sepModal.style.display = "none";
+      }
+
+      octSpan.onclick = function() {
+        octModal.style.display = "none";
+      }
+
+      novSpan.onclick = function() {
+        novModal.style.display = "none";
+      }
+
+      decSpan.onclick = function() {
+        decModal.style.display = "none";
+      }
+
+      janSpan.onclick = function() {
+        janModal.style.display = "none";
+      }
+
+      febSpan.onclick = function() {
+        febModal.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+        if (event.target == sepModal
+            || event.target == octModal
+            || event.target == novModal
+            || event.target == decModal
+            || event.target == janModal
+            || event.target == febModal) {
+          sepModal.style.display = "none";
+          octModal.style.display = "none";
+          novModal.style.display = "none";
+          decModal.style.display = "none";
+          janModal.style.display = "none";
+          febModal.style.display = "none";
+        }
+      }
+
+      function nextFunction() {
+        window.location.replace("http://catharina-m.infinityfreeapp.com/2023/Birthday/")
+      }
+    </script>
+  </body>
+</html>
