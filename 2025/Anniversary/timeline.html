@@ -1,0 +1,1087 @@
+<!DOCTYPE HTML>
+<html lang="en" class=""><head>
+
+  <meta charset="UTF-8">
+  <title>Happy Anniversary</title>
+
+  <meta name="robots" content="noindex">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.1.3/anime.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>  
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <style >
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400|Inconsolata);
+    html {
+        scroll-behavior: smooth;
+    }
+    ul#tabs-list {
+      list-style: none;
+      text-align: center;
+      border-bottom: 1px solid #dfdfdf;
+      margin: 0;
+      padding: 0;
+    }
+
+    label.panel-label {
+      -webkit-user-select: none;
+        -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      display: block;
+      width: 100%;
+      color: #bdc3c7;
+      cursor: pointer;
+      background-color: #ecf0f1;
+      transition-property: background-color, color;
+      transition-duration: 200ms;
+      font-size: 20px;
+    }
+    label.panel-label:hover {
+      color: #c0392b;
+    }
+
+    #panels {
+      background-color: white;
+      opacity: 0.85;
+      min-height: 700px;
+    }
+    #panels .container {
+      margin: 0 auto;
+      width: 90%;
+    }
+    #panels section header label.panel-label {
+      padding: 12px 24px;
+      box-sizing: border-box;
+    }
+    #panels section main {
+      box-sizing: border-box;
+      max-height: 0;
+      opacity: 0;
+      transition: opacity 600ms;
+      overflow-y: hidden;
+    }
+
+    #panel-1-ctrl:checked ~ #panels #panel-1 main {
+      max-height: initial;
+      opacity: 1;
+      padding: 48px 24px;
+    }
+
+    #panel-2-ctrl:checked ~ #panels #panel-2 main {
+      max-height: initial;
+      opacity: 1;
+      padding: 48px 24px;
+    }
+
+    #panel-3-ctrl:checked ~ #panels #panel-3 main {
+      max-height: initial;
+      opacity: 1;
+      padding: 48px 24px;
+    }
+
+    #panel-4-ctrl:checked ~ #panels #panel-4 main {
+      max-height: initial;
+      opacity: 1;
+      padding: 48px 24px;
+    }
+
+    #panel-5-ctrl:checked ~ #panels #panel-5 main {
+      max-height: initial;
+      opacity: 1;
+      padding: 48px 24px;
+    }
+    
+    #panel-6-ctrl:checked ~ #panels #panel-6 main {
+      max-height: initial;
+      opacity: 1;
+      padding: 48px 24px;
+    }
+
+    @media all and (max-width: 767px) {
+      #nav-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+        max-height: 46px;
+        opacity: 1;
+      }
+
+      #nav-ctrl:checked ~ #tabs-list #li-for-panel-2 {
+        max-height: 46px;
+        opacity: 1;
+      }
+
+      #nav-ctrl:checked ~ #tabs-list #li-for-panel-3 {
+        max-height: 46px;
+        opacity: 1;
+      }
+
+      #nav-ctrl:checked ~ #tabs-list #li-for-panel-4 {
+        max-height: 46px;
+        opacity: 1;
+      }
+
+      #nav-ctrl:checked ~ #tabs-list #li-for-panel-5 {
+        max-height: 46px;
+        opacity: 1;
+      }
+      #nav-ctrl:checked ~ #tabs-list #li-for-panel-6 {
+        max-height: 46px;
+        opacity: 1;
+      }
+
+      #open-nav-label {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+      }
+
+      #nav-ctrl:checked ~ #tabs-list #open-nav-label {
+        display: none;
+      }
+
+      #close-nav-label {
+        display: block;
+        max-height: 0;
+        overflow-y: hidden;
+        background-color: #444444;
+        color: #ecf0f1;
+        padding: 0px;
+        transition: max-height 200ms;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: 1px;
+      }
+
+      #nav-ctrl:checked ~ #tabs-list #close-nav-label {
+        max-height: 36px;
+        opacity: 1;
+        padding: 12px 24px;
+      }
+
+      #tabs-list {
+        position: relative;
+      }
+      #tabs-list label.panel-label {
+        padding: 12px 0;
+      }
+      #tabs-list #li-for-panel-1 {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 200ms;
+      }
+      #tabs-list #li-for-panel-2 {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 200ms;
+      }
+      #tabs-list #li-for-panel-3 {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 200ms;
+      }
+      #tabs-list #li-for-panel-4 {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 200ms;
+      }
+      #tabs-list #li-for-panel-5 {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 200ms;
+      }
+      #tabs-list #li-for-panel-6 {
+        max-height: 0;
+        overflow-y: hidden;
+        transition: max-height 200ms;
+      }
+
+      #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+        max-height: 46px;
+        opacity: 1;
+      }
+      #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        background-color: #c0392b;
+        color: white;
+      }
+
+      #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 {
+        max-height: 46px;
+        opacity: 1;
+      }
+      #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        background-color: #c0392b;
+        color: white;
+      }
+
+      #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 {
+        max-height: 46px;
+        opacity: 1;
+      }
+      #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        background-color: #c0392b;
+        color: white;
+      }
+
+      #panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 {
+        max-height: 46px;
+        opacity: 1;
+      }
+      #panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        background-color: #c0392b;
+        color: white;
+      }
+
+      #panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 {
+        max-height: 46px;
+        opacity: 1;
+      }
+      #panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        background-color: #c0392b;
+        color: white;
+      }
+
+      #panel-6-ctrl:checked ~ #tabs-list #li-for-panel-6 {
+        max-height: 46px;
+        opacity: 1;
+      }
+      #panel-6-ctrl:checked ~ #tabs-list #li-for-panel-6 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        background-color: #c0392b;
+        color: white;
+      }
+
+
+      #panels .container {
+        width: 100%;
+      }
+      #panels section header {
+        display: block;
+      }
+    }
+    @media all and (min-width: 768px) {
+      #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 {
+        pointer-events: none;
+        cursor: default;
+        transform: translate3d(0, 1px, 0);
+        box-shadow: none;
+        border-right: none;
+      }
+      #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1.last {
+        border-right: 1px solid transparent;
+      }
+      #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 + li {
+        border-left: 1px solid #dfdfdf;
+      }
+      #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        padding-top: 26px;
+      }
+      #panel-1-ctrl:checked ~ #tabs-list #li-for-panel-1 label.panel-label::after {
+        height: 6px;
+      }
+
+      #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 {
+        pointer-events: none;
+        cursor: default;
+        transform: translate3d(0, 1px, 0);
+        box-shadow: none;
+        border-right: none;
+      }
+      #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2.last {
+        border-right: 1px solid transparent;
+      }
+      #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 + li {
+        border-left: 1px solid #dfdfdf;
+      }
+      #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        padding-top: 26px;
+      }
+      #panel-2-ctrl:checked ~ #tabs-list #li-for-panel-2 label.panel-label::after {
+        height: 6px;
+      }
+
+      #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 {
+        pointer-events: none;
+        cursor: default;
+        transform: translate3d(0, 1px, 0);
+        box-shadow: none;
+        border-right: none;
+      }
+      #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3.last {
+        border-right: 1px solid transparent;
+      }
+      #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 + li {
+        border-left: 1px solid #dfdfdf;
+      }
+      #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        padding-top: 26px;
+      }
+      #panel-3-ctrl:checked ~ #tabs-list #li-for-panel-3 label.panel-label::after {
+        height: 6px;
+      }
+
+      #panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 {
+        pointer-events: none;
+        cursor: default;
+        transform: translate3d(0, 1px, 0);
+        box-shadow: none;
+        border-right: none;
+      }
+      #panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4.last {
+        border-right: 1px solid transparent;
+      }
+      #panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 + li {
+        border-left: 1px solid #dfdfdf;
+      }
+      #panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        padding-top: 26px;
+      }
+      #panel-4-ctrl:checked ~ #tabs-list #li-for-panel-4 label.panel-label::after {
+        height: 6px;
+      }
+
+      #panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 {
+        pointer-events: none;
+        cursor: default;
+        transform: translate3d(0, 1px, 0);
+        box-shadow: none;
+        border-right: none;
+      }
+      #panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5.last {
+        border-right: 1px solid transparent;
+      }
+      #panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 + li {
+        border-left: 1px solid #dfdfdf;
+      }
+      #panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        padding-top: 26px;
+      }
+      #panel-5-ctrl:checked ~ #tabs-list #li-for-panel-5 label.panel-label::after {
+        height: 6px;
+      }
+
+      #panel-6-ctrl:checked ~ #tabs-list #li-for-panel-6 {
+        pointer-events: none;
+        cursor: default;
+        transform: translate3d(0, 1px, 0);
+        box-shadow: none;
+        border-right: none;
+      }
+      #panel-6-ctrl:checked ~ #tabs-list #li-for-panel-6.last {
+        border-right: 1px solid transparent;
+      }
+      #panel-6-ctrl:checked ~ #tabs-list #li-for-panel-6 + li {
+        border-left: 1px solid #dfdfdf;
+      }
+      #panel-6-ctrl:checked ~ #tabs-list #li-for-panel-6 label.panel-label {
+        background-color: white;
+        color: #c0392b;
+        padding-top: 26px;
+      }
+      #panel-6-ctrl:checked ~ #tabs-list #li-for-panel-6 label.panel-label::after {
+        height: 6px;
+      }
+
+      ul#tabs-list {
+        text-align: center;
+        border-bottom: 1px solid #dfdfdf;
+      }
+      ul#tabs-list li {
+        display: inline-block;
+        text-align: center;
+        font-size: 0.875em;
+        width: 14%;
+        box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.05);
+        border-right: 1px solid #dfdfdf;
+        position: relative;
+      }
+      ul#tabs-list li:hover {
+        transition: none;
+        border-right: none;
+      }
+      ul#tabs-list li:hover.last {
+        border-right: 1px solid transparent;
+      }
+      ul#tabs-list li:hover + li {
+        border-left: 1px solid #dfdfdf;
+      }
+      ul#tabs-list li label.panel-label {
+        position: relative;
+        padding: 24px 0;
+      }
+      ul#tabs-list li label.panel-label::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 100%;
+        background-color: #c0392b;
+        height: 0;
+        transition-property: height;
+        transition-duration: 200ms;
+      }
+      ul#tabs-list li label.panel-label:hover {
+        padding-top: 25px;
+      }
+      ul#tabs-list li label.panel-label:hover::after {
+        height: 6px;
+      }
+
+      #open-nav-label,
+    #close-nav-label {
+        display: none;
+      }
+
+      #nav-ctrl {
+        display: none;
+      }
+    }
+    @media all and (min-width: 900px) {
+      main {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+    .panel-radios {
+      position: fixed;
+      left: 50%;
+      top: 10px;
+      width: 20px;
+      opacity: 0.5;
+      z-index: 99;
+    }
+    .panel-radios:nth-child(1) {
+      transform: translateX(-50px);
+    }
+    .panel-radios:nth-child(2) {
+      transform: translateX(-30px);
+    }
+    .panel-radios:nth-child(3) {
+      transform: translateX(-10px);
+    }
+    .panel-radios:nth-child(4) {
+      transform: translateX(10px);
+    }
+    .panel-radios:nth-child(5) {
+      transform: translateX(30px);
+    }
+    .panel-radios:nth-child(6) {
+      transform: translateX(50px);
+    }
+    .panel-radios:nth-child(7) {
+      top: 30px;
+      transform: translateX(-10px);
+      display: block;
+    }
+
+    body {
+      background: url("../../img/2023/anniversary/flower-anniv.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      color: #444444;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    #introduction {
+      width: 90%;
+      margin: 0 auto;
+      padding: 48px 24px;
+      color: rgb(129, 8, 54);
+    }
+    #introduction h1 {
+      font-weight: 300;
+      text-align: center;
+    }
+
+    main h1 {
+      margin-top: 0;
+      font-size: 36px;
+      font-weight: 300;
+      color: #c0392b;
+    }
+    main p {
+      line-height: 1.8;
+    }
+    main hr {
+      margin: 12px 0;
+      border-top: 1px solid #dfdfdf;
+    }
+
+    label.demo-label {
+      background-color: #c0392b;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 2px;
+      cursor: pointer;
+      display: inline-block;
+      -webkit-user-select: none;
+        -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+    }
+    label.demo-label:hover {
+      background-color: #e74c3c;
+    }
+
+    #demo-child-toggle {
+      display: none;
+    }
+    #demo-child-toggle:checked ~ #demo-parent #demo-child {
+      color: #c0392b;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    #demo-parent {
+      margin-top: 8px;
+    }
+
+    
+    .wrapperPol {
+      width: 100%;
+      padding: 0 2rem;
+      text-align: center;
+      color:black;
+    }
+    .polaroid {
+      background: #fff;
+      padding: 1rem;
+      box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
+
+    }
+    .polaroid > img{
+      max-width: 100%;
+      height: auto;
+    }
+    .caption {
+      font-size: 1.8rem;
+      text-align: center;
+      line-height: 2em;
+    }
+    .item {
+      width: 30%;
+      display: inline-block;
+      margin-top: 2rem;
+      filter: grayscale(100%);
+    }
+    .item .polaroid:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+1) {
+      transform: scale(0.8, 0.8) rotate(5deg);
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+1) .polaroid:before {
+      transform: rotate(6deg);
+      height: 20%;
+      width: 47%;
+      bottom: 30px;
+      right: 12px;
+      box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+    }
+    .item:nth-of-type(4n+2) {
+      transform: scale(0.8, 0.8) rotate(-5deg);
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+2) .polaroid:before {
+      transform: rotate(-6deg);
+      height: 20%;
+      width: 47%;
+      bottom: 30px;
+      left: 12px;
+      box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.4);
+    }
+    .item:nth-of-type(4n+4) {
+      transform: scale(0.8, 0.8) rotate(3deg);
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+4) .polaroid:before {
+      transform: rotate(4deg);
+      height: 20%;
+      width: 47%;
+      bottom: 30px;
+      right: 12px;
+      box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+    }
+    .item:nth-of-type(4n+3) {
+      transform: scale(0.8, 0.8) rotate(-3deg);
+      transition: all 0.35s;
+    }
+    .item:nth-of-type(4n+3) .polaroid:before {
+      transform: rotate(-4deg);
+      height: 20%;
+      width: 47%;
+      bottom: 30px;
+      left: 12px;
+      box-shadow: 0 2.1rem 2rem rgba(0,0,0,0.3);
+    }
+    .item:hover {
+      filter: none;
+      transform: scale(1, 1) rotate(0deg) !important;
+      transition: all 0.35s;
+    }
+    .item:hover .polaroid:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      transform: rotate(0deg);
+      height: 90%;
+      width: 90%;
+      bottom: 0%;
+      right: 5%;
+      box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
+      transition: all 0.35s;
+    }
+
+    
+
+      .heart {
+        opacity: 0.4;
+        width: 10px ;
+        position:absolute;
+        
+        text-align:center;
+
+          background-color:"blue";
+          width: 10px;
+          height: 90px;
+      }
+      .heart:before,
+      .heart:after {
+          position: absolute;
+        background-color:"blue";
+          content: "";
+          left: 50px;
+          top: 0;
+          width: 50px;
+          height: 80px;
+          background: red;
+          -moz-border-radius: 50px 50px 0 0;
+          border-radius: 50px 50px 0 0;
+          -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+          -webkit-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+              -ms-transform-origin: 0 100%;
+              -o-transform-origin: 0 100%;
+                  transform-origin: 0 100%;
+        
+        
+            background: #fff;
+          -webkit-animation: random 5s infinite;
+          animation: random 5s infinite;
+      }
+      @keyframes  random {
+          15% { background: red; } 
+          30% { background: yellow; } 
+          45% { background: green; } 
+          60% { background: blue; }
+          75% { background: pink; }  
+      }
+
+      .heart:after {
+        background-color:"blue";
+          left: 0;
+          -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+                  transform: rotate(45deg);
+          -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+              -ms-transform-origin: 100% 100%;
+              -o-transform-origin: 100% 100%;
+                  transform-origin :100% 100%;
+      }
+
+  </style>
+  </head>
+
+
+  <body>
+    <!-- TAB CONTROLLERS -->
+    <input id="panel-1-ctrl"
+          class="panel-radios" type="radio" name="tab-radios" checked>
+    <input id="panel-2-ctrl"
+          class="panel-radios" type="radio" name="tab-radios">
+    <input id="panel-3-ctrl"
+          class="panel-radios" type="radio" name="tab-radios">
+    <input id="panel-4-ctrl"
+          class="panel-radios" type="radio" name="tab-radios">
+    <input id="panel-5-ctrl"
+          class="panel-radios" type="radio" name="tab-radios">
+    <input id="panel-6-ctrl"
+          class="panel-radios" type="radio" name="tab-radios">
+    <input id="nav-ctrl"
+          class="panel-radios" type="checkbox" name="nav-checkbox">
+
+    <header id="introduction">
+      <h1>Happy Anniversary Catharina</h1>
+    </header>
+
+    <!-- TABS LIST -->
+    <ul id="tabs-list">
+        <!-- MENU TOGGLE -->
+        <label id="open-nav-label" for="nav-ctrl"></label>
+        <li id="li-for-panel-1" >
+          <label class="panel-label"
+                for="panel-1-ctrl">June</label>
+        </li><!--INLINE-BLOCK FIX
+    --><li id="li-for-panel-2" >
+          <label class="panel-label"
+                for="panel-2-ctrl">July</label>
+        </li><!--INLINE-BLOCK FIX
+    --><li id="li-for-panel-3" >
+          <label class="panel-label"
+                for="panel-3-ctrl">August</label>
+        </li><!--INLINE-BLOCK FIX
+    --><li id="li-for-panel-4" >
+          <label class="panel-label"
+                for="panel-4-ctrl">September</label>
+        </li><!--INLINE-BLOCK FIX
+    --><li id="li-for-panel-5" >
+          <label class="panel-label"
+                for="panel-5-ctrl">October</label>
+        </li><!--INLINE-BLOCK FIX
+    --><li id="li-for-panel-6" class="last">
+          <label class="panel-label"
+                for="panel-6-ctrl">November</label>
+        </li>
+        <label id="close-nav-label" for="nav-ctrl">Close</label>
+    </ul>
+
+    <!-- THE PANELS -->
+    <article id="panels">
+      <div class="container">
+        <section id="panel-1">
+          <main>
+            <h1>First step to our dream</h1>
+            <p>Halooo, ketemu lagi dengan saya. Jadi gimana kabarmu? semoga baik" saja ya. 
+                Soalnya bulan ini itu bulan kamu stress"nya. 
+                Kamu mau cari kerjaan, sampai aku bantuin, tapi kamu belum dapet.  
+                Aku ngga bisa liat kamu stress", jadi aku bantuin dalam bentuk apapun. 
+                Kalau kabarku ya baik" saja. Aku mah cuman ngelanjutin kerjaanku yakan, truss menikmati hidup wkkwkww. 
+                Aku minta maaf ya soalnya kadang aku ngga bisa dengerin kamu yang lagi curhat.
+                Tunggu ya, sebentar lagi aku lulus truss cari kerjaan. 
+                Ini sudah semester terakhirku ebeb. 
+                Semangat ya jalanin kerjaanmu walaupun itu susah. 
+                Eh bulan ini kita juga cari apartemen ebebbbb.
+                dapet dah 1 yang kita mau ez lah, ya walaupun harganya mahal sih... 
+                Semoga nanti aku langsung dapet kerjaan truss bisa enak deh kita.
+                Sadhu sadhu sadhu...
+            </p>
+            <div class ="wrapperPol">
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/jun-badminton.gif"  loading="lazy" style="width:100%" alt="Badminton - June,2024" />
+                  <div class="caption">Badminton</div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/jun-bakso.gif" loading="lazy" style="width:100%" alt="Bakso - June,2024" />
+                  <div class="caption">Project Bakso</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/jun-quiz.jpg" loading="lazy" style="width:100%" alt="Quiz - June,2024" />
+                  <div class="caption">Ga jelas</div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
+        <section id="panel-2">
+          <main>
+            <h1>The Preperation</h1>
+            <p>Bulan ini akhirnya aku lulus. Setelah begitu lama ya kan alhamdulilahhhh wkkwkw.
+                Kamu juga sudah dapet kerjaan nih mantab ebebbb, jadinya bisa biayain aku nih nanti di Wellington.
+                Semangat ya ebeb, tinggal beberapa minggu lagi kamu sudah ngga usah kerja ditempat itu lagi.
+                Aku lagi nungguin visa nih dari kemarin ngga keluar".
+                Untung ada kamu kan ya, jadi police certificatenya cepet keluarnya.
+                Aku pergi ke Wellington dlu ah liburan ke museum truss liat" apartemen.
+                Apartemennya bagus ebeb, kita bisa tinggal disini.
+                Kita bakal tinggal disini sih, soalnya enak dan strategis ebeb.
+                Selain itu, kita juga mulai koleksi boardgame, dan aku mulai lari.
+                Main sama brandon seru ya, tapi kita sudah mau pergi, sedih deh.
+                Eh perutnya di Keilin sudah besar tuh, kalau ditusuk bakal keluar angin ngga ya, jadi ban gembos.
+                Lari ku lumayan sering semoga bisa lanjut di Wellington.
+              </p>
+            <div class ="wrapperPol">
+
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/jul-boardgame.gif" loading="lazy" style="width:100%" alt="Hamilton - July,2024" />
+                  <div class="caption">Boardgame :)</div>
+                </div>
+              </div>
+              
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/jul-trip.jpg" loading="lazy" style="width:100%" alt="Hamilton - July,2024" />
+                  <div class="caption">Another Trip </div>
+                </div>
+              </div>
+
+              
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/jul-waffle.jpg" loading="lazy" style="width:100%" alt="Hamilton - July,2024" />
+                  <div class="caption">My WAFFLEEEE </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
+        <section id="panel-3">
+          <main>
+            <h1>Moving Out</h1>
+            <p>Sebelum kita pergi ke Wellington, kita pergi ke Auckland dulu. 
+                Menghampiri temenmu dan sepupumu.
+                Seru deh kalau pergi sama kamu, aku jadi ngga sendirian.
+                Inget ngga ya kita pergi kemana aja.
+                Aku ngga inget, soalny fokusku hanya ke kamu :)
+                Setelah pulang kita haru beres" ebeb buat pergi ke Wellington.
+                Barang"nya banyak sekali emang barangmu ini, eh salah barang kita.
+                Sorry ya kadang aku ngga kepikir kamu bisa semarah itu ebeb.
+                Satu lagi pelajaran buat aku gimana cara hadepin kamu.
+                Aku mau belajar dan berkembang kok ebeb, jadi sabar" ya sama aku.
+                Mobil kita penuh sampe ngga bisa duduk kamu wkwkkwkwwk.
+                Sementara aku jadi supir seharian, tapi begitu sampe worth it banget ebeb.
+                Kita mulai nyusun barang", beli barang" yang diperluin.
+                Eh iya, bye" temenmu yang gemoi itu, aku lupa namanya wkkwkwkwk.
+                
+            </p>
+            <div class ="wrapperPol">
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/aug-puzzle.gif"  loading="lazy" style="width:100%" alt="Wellington - August,2024" />
+                  <div class="caption">Puzzle</div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/aug-trip.gif" loading="lazy" style="width:100%" alt="Wellington - August,2024" />
+                  <div class="caption">Trip</div>
+                </div>
+              </div>
+
+            </div>
+          </main>
+        </section>
+        <section id="panel-4">
+          <main>
+            <h1>Challanges</h1>
+            <p>Ternyata cari kerjaan susah juga ya.
+                Aku sudah coba cari ebeb, tapi memang ngga dapet.
+                Sorry ya aku jadi bebanmu lagi.
+                Aku bakal cari cara buat dapet minimal part time.
+                Kamu kyknya lagi menikmatin kerjaanmu sih.
+                Oh ya dibulan ini kamu juga ngga lulus kelas, jadi kamu harus ulang.
+                Semangat ya - from your best boyfriend.
+                Tapi gpp lah kita masih harus berjuang ebeb.
+                Kalau aku dapet kerjaan aku pasti bantu dalam bidang finansial kok.
+                Eits tapi ada yang bagus di bulan iniiiiii.
+                MOONCAKE.
+                Akhirnya setelah lama menunda rasa haus akan mooncake.
+                Aku langsung makan lebaih dari 10 piece, 1 hari 1 piece.
+                Enak banget ebebbbb.
+                Kayaknya aku kecanduan mooncake ebebbbbbbb.
+                
+            </p>
+            <div class ="wrapperPol">
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/sep-mooncake.gif"  loading="lazy" style="width:100%" alt="Hamilton - September,2023" />
+                  <div class="caption">My Fav</div>
+                </div>
+              </div>
+              
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/sep-scopa.gif"  loading="lazy" style="width:100%" alt="Hamilton - September,2023" />
+                  <div class="caption">Your Fav</div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
+        <section id="panel-5">
+          <main>
+            <h1>My Birthday</h1>
+            <p>Selamet ulang tahun~~ Selamet ulang tahun~~.
+                Lumayan dapet baju sama kue ice cream.
+                Enak kok ebeb kuenya, tapi yang pink ngga enak wkwkkwwk.
+                Gimana rasanya kerja disana?
+                Sabar yaaa namanya juga perusahaan kecil ebeb, pasti lah banyak kerjaannya.
+                Aku dapet part time akhirnyaaaaaaa.
+                Yah walaupun bukan kerjaan yang aku mau, tapi lumayan lah ya.
+                Memang di bulan ulang tahunku ini memang dimana aku hoki.
+                Tapi kita tiap hari makan curry ebeb sampe enek wkwkwkkw.
+                Rotinya masih oke sih jadi ya gpp.
+                Truss memang ya di bulan ini kita selalu main di ayunan, kalau Ocotober itu dimana kita jadi anak kecil lagi.
+            </p>
+            <div class ="wrapperPol">
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/oct-cake.gif"  loading="lazy" style="width:100%" alt="Hamilton - October,2023" />
+                  <div class="caption">Pinknya ngga enak</div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/oct-dinner.gif" loading="lazy" style="width:100%" alt="Hamilton - October,2023" />
+                  <div class="caption">Delish</div>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/oct-tunnel.gif" loading="lazy" style="width:100%" alt="Hamilton - October,2023" />
+                  <div class="caption">To the future?</div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </section>
+        <section id="panel-6">
+          <main>
+            <h1>Happy Anniversary</h1>
+            <p>Hi... Happy aniv kedua kita beb.
+                Sorry ya aku ngga bisa ngetreat kamu seperti yang seharusnya.
+                Aku juga manusia ebeb, jadi kadang salah, tolong dimengerti ya sayang.
+                Tapi aku pasti berusaha memperjuangkan untuk kesenanganmu supaya ngga stress".
+                I'm looking forward for the trips, laughter, and the years to come.
+                Today we celebrate the best decision we've ever made. 
+                Happy Anniversary, my forever and always.</p>
+            <div class ="wrapperPol">
+              <div class="item">
+                <div class="polaroid">
+                  <img src="../../img/2024/anniversary/another-memories.gif" loading="lazy" style="width:100%" alt="Hamilton - Oct,2023" />
+                  <div class="caption">Another Memories</div>
+                </div>
+              </div>
+            </div>
+            
+            <a href="../../2025/Valentine/" >
+              <span class="nav__counter">Next event</span>
+            </a>
+          </main>
+        </section>
+      </div>
+    </article>
+    <audio controls autoplay loop>
+      <source src="../../audio/2023/anniversary/photograph-anniversary.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <script>
+    $("#panels").append("<div class = 'heart'></div>")
+    $("#panels").append("<div class = 'heart'></div>")
+    anime({
+        targets: '.heart',
+        scale: function(el, index) {
+        return anime.random(.3, .5); 
+        },
+            
+        rotate: {
+        value: function(el, index) {
+            return anime.random(-40, 40); 
+        },
+        duration: function(el, index) {
+            return anime.random(400, 2000); 
+        },
+        easing: 'easeInOutExpo'
+        },
+        delay: 50,
+        translateX: function(el, index) {
+        return anime.random(10, 50); 
+        },
+        translateY: function(el, index) {
+        return anime.random(10, 100); 
+        },  
+        direction: 'alternate',
+        elasticity:300,
+        loop: true
+    });
+    $(".heart").each(function() {
+        $(this).css("left", (Math.random() *85)+"%");
+        $(this).css("top", (Math.random() *100)+"%");
+    });
+    var count = 0;
+    $("#tabs-list").click(function(){
+        if(count<10){
+            count++;
+            $("#panels").append("<div class = 'heart'></div>")
+            $("#panels").append("<div class = 'heart'></div>")
+            anime({
+            targets: '.heart',
+            scale: function(el, index) {
+                return anime.random(.3, .5); 
+            },
+                
+            rotate: {
+                value: function(el, index) {
+                return anime.random(-40, 40); 
+                },
+                duration: function(el, index) {
+                return anime.random(400, 2000); 
+                },
+                easing: 'easeInOutExpo'
+            },
+            delay: 50,
+            translateX: function(el, index) {
+                return anime.random(10, 50); 
+            },
+            translateY: function(el, index) {
+                return anime.random(10, 100); 
+            },  
+            direction: 'alternate',
+            elasticity:300,
+            loop: true
+            });
+        }
+
+        $(".heart").each(function() {
+          $(this).css("left", (Math.random() *85)+"%");
+          $(this).css("top", (Math.random() *100)+"%");
+        });
+
+    });
+    </script>
+  </body></html>

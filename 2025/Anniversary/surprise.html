@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.1.3/anime.js"></script>  
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- <link rel="icon" type="image/x-icon" href="../../img/icon.png"> -->
+    <style>
+      
+      .center {
+        padding: 70px 0;
+        margin: auto;
+        width: 80%;
+      }
+
+      h1{
+        color:rgb(103, 32, 76);
+        text-align:center;
+        font-family: 'Dancing Script', cursive;
+        
+      }
+
+      a{
+        text-align:center;
+      }
+      
+      h2{
+        color:rgb(103, 32, 76);
+        text-align:center;
+        font-family: 'Dancing Script', cursive;
+        
+      }
+
+      h3{
+        font-family: 'Josefin Slab', serif;
+        color:rgb(103, 32, 76);
+        text-align:center;
+      }
+
+
+      body {
+        background: url("../../img/2023/anniversary/flower-anniv.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+      }
+
+
+      .heart {
+        
+        width: 10px ;
+        position:absolute;
+        
+        text-align:center;
+
+          background-color:"blue";
+          width: 10px;
+          height: 90px;
+      }
+      .heart:before,
+      .heart:after {
+          position: absolute;
+        background-color:"blue";
+          content: "";
+          left: 50px;
+          top: 0;
+          width: 50px;
+          height: 80px;
+          background: red;
+          -moz-border-radius: 50px 50px 0 0;
+          border-radius: 50px 50px 0 0;
+          -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+                  transform: rotate(-45deg);
+          -webkit-transform-origin: 0 100%;
+            -moz-transform-origin: 0 100%;
+              -ms-transform-origin: 0 100%;
+              -o-transform-origin: 0 100%;
+                  transform-origin: 0 100%;
+        
+        
+            background: #fff;
+          -webkit-animation: random 5s infinite;
+          animation: random 5s infinite;
+      }
+      @keyframes  random {
+          15% { background: red; } 
+          30% { background: yellow; } 
+          45% { background: green; } 
+          60% { background: blue; }
+          75% { background: pink; }  
+      }
+
+      .heart:after {
+        background-color:"blue";
+          left: 0;
+          -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+                  transform: rotate(45deg);
+          -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+              -ms-transform-origin: 100% 100%;
+              -o-transform-origin: 100% 100%;
+                  transform-origin :100% 100%;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="w3-container center">
+      <div id = "card" class="w3-panel w3-card-2 w3-hover-shadow">
+        <h1> Happy Anniversary Catharina</h1>
+        <h2>Another year with me. Our journey together.</h2>
+        <p>
+        <h3 id = "clickMe">Click me a couple of times first</32>
+        <p>
+      </div>
+    </div>
+
+    <div id = "container">
+
+    </div>
+    <script>
+        var clicked = false
+        var count = 0
+      $(":header").click(function(){
+        $("#container").append("<div class = 'heart'></div>")
+        if(count===5){
+            $("#card").append("<a href='./timeline.html?'>Click Me to go to the next page</a>")
+        }
+        count = count +1
+
+        anime({
+          targets: '.heart',
+          scale: function(el, index) {
+            return anime.random(.3, .5); 
+          },
+              
+          rotate: {
+            value: function(el, index) {
+              return anime.random(-40, 40); 
+            },
+            duration: function(el, index) {
+              return anime.random(400, 2000); 
+            },
+            easing: 'easeInOutExpo'
+          },
+          delay: 50,
+          translateX: function(el, index) {
+            return anime.random(10, 50); 
+          },
+          translateY: function(el, index) {
+            return anime.random(10, 100); 
+          },  
+          direction: 'alternate',
+          elasticity:300,
+          loop: true
+        });
+
+        $(".heart").each(function() {
+          $(this).css("left", (Math.random() *100)+"%");
+          $(this).css("top", (Math.random() *100)+"%");
+        });
+
+    });
+               
+    </script>
+
+  </body>
+</html>
